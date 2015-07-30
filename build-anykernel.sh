@@ -33,9 +33,9 @@ export CCACHE=ccache
 
 # Paths
 KERNEL_DIR=`pwd`
-REPACK_DIR="${HOME}/android/source/kernel/Victara-Stock-AnyKernel"
-PATCH_DIR="${HOME}/android/source/kernel/Victara-Stock-AnyKernel/patch"
-MODULES_DIR="${HOME}/android/source/kernel/Victara-Stock-AnyKernel/modules"
+REPACK_DIR="${HOME}/android/source/kernel/Victara-AnyKernel"
+PATCH_DIR="${HOME}/android/source/kernel/Victara-AnyKernel/patch"
+MODULES_DIR="${HOME}/android/source/kernel/Victara-AnyKernel/modules"
 ZIP_MOVE="${HOME}/android/source/zips/victara-stock-zips"
 ZIMAGE_DIR="${HOME}/android/source/kernel/msm8974_Victara-Stock_render_kernel/arch/arm/boot"
 VARIANT="VICTARA"
@@ -44,6 +44,7 @@ VARIANT="VICTARA"
 function clean_all {
 		rm -rf $MODULES_DIR/*
 		cd $REPACK_DIR
+		git checkout victara-stock
 		rm -rf $KERNEL
 		rm -rf $DTBIMAGE
 		cd $KERNEL_DIR
